@@ -251,12 +251,12 @@ export const SKILLS: Record<string, string[]> = {
 export const SKILL_NOTES: Record<string, string> = {
   React: "Tunica Labs client work, plus eqlTab and eqlShare",
   "Next.js": "eqlTab web app and this portfolio",
-  "React Native": "eqlTab mobile, eqlShare client, ESP32 app",
+  "React Native (Expo)": "eqlTab mobile, eqlShare client, ESP32 app",
   TypeScript: "eqlShare, Leash and this site",
   Python: "Drive-test sensor logs at Quire Systems",
   Supabase: "Backend for eqlShare",
   "Claude Code": "Daily driver for building and shipping my products",
-  "Agent guardrails": "Leash: budget and category limits",
+  "Agent spending guardrails": "Leash: budget and category limits",
   "Web application security": "Graduate research on web threat classes",
 };
 
