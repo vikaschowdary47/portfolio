@@ -34,7 +34,7 @@ export default function Home() {
               </div>
               <div>
                 <dt className="lbl">Exp</dt>
-                <dd>3+ yrs · React / Node / Python</dd>
+                <dd>4+ years · React / Node / Python</dd>
               </div>
               <div>
                 <dt className="lbl">Degree</dt>
@@ -108,22 +108,30 @@ export default function Home() {
             <h2>Skills</h2>
           </div>
           <div className="skTop">
-            <h3 className="skTitle">Technologies <em>I build with</em></h3>
-            <p className="skSub">A modern toolkit for building, shipping, and scaling products.</p>
+            <h3 className="skTitle">
+              Technologies <em>I build with</em>
+            </h3>
+            <p className="skSub">
+              A modern toolkit for building, shipping, and scaling products.
+            </p>
           </div>
           <ul className="skTiles">
-            {Object.values(SKILLS).flat().map((s) => (
-              <li key={s} tabIndex={0} className="skCard">
-                <span className="skFace skFront">
-                  <span className="skIc"><SkillIcon name={s} /></span>
-                  {s}
-                </span>
-                <span className="skFace skBack">
-                  <b>{s}</b>
-                  {SKILL_NOTES[s] ?? "Used across my projects"}
-                </span>
-              </li>
-            ))}
+            {Object.values(SKILLS)
+              .flat()
+              .map((s) => (
+                <li key={s} tabIndex={0} className="skCard">
+                  <span className="skFace skFront">
+                    <span className="skIc">
+                      <SkillIcon name={s} />
+                    </span>
+                    {s}
+                  </span>
+                  <span className="skFace skBack">
+                    <b>{s}</b>
+                    {SKILL_NOTES[s] ?? "Used across my projects"}
+                  </span>
+                </li>
+              ))}
           </ul>
         </section>
       </main>
@@ -145,6 +153,17 @@ export default function Home() {
         <div className="wrap">
           <span>{ME.legalName.toUpperCase()}</span>
           <span>CHICAGO, IL</span>
+          <a
+            href={ME.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ marginLeft: "auto" }}
+          >
+            GITHUB
+          </a>
+          <a href={ME.linkedin} target="_blank" rel="noopener noreferrer">
+            LINKEDIN
+          </a>
         </div>
       </footer>
     </>

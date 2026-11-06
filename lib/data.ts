@@ -218,16 +218,33 @@ export const EXPERIENCE = [
 ];
 
 export const SKILLS: Record<string, string[]> = {
-  "Front end": ["React", "Next.js", "React Native", "TypeScript", "JavaScript"],
-  "Back end": ["Node.js", "Python", "REST APIs", "Supabase", "PostgreSQL"],
-  Platform: ["AWS", "Gmail API"],
+  "Front end": [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "Redux",
+    "Tailwind",
+    "Storybook",
+  ],
+  "Mobile & desktop": ["React Native (Expo)", "Electron"],
+  "Back end": [
+    "Node.js",
+    "Python",
+    "REST APIs",
+    "GraphQL",
+    "Supabase",
+    "PostgreSQL",
+  ],
+  Platform: ["AWS", "Cloudflare Workers", "GitHub Actions CI/CD", "Gmail API"],
+  Testing: ["Vitest", "Jest", "React Testing Library", "Playwright"],
   AI: [
     "Claude Code",
-    "LLM tooling",
-    "Agent guardrails",
-    "Prompt & tool design",
+    "LLM integration (Gemini)",
+    "Structured output with Zod",
+    "Agent spending guardrails",
   ],
-  Other: ["Web application security", "Drive-test pipelines"],
+  "Security & data": ["Web application security", "ADAS test-data validation"],
 };
 
 /** Back-of-card proof for each skill. Edit freely; missing skills just show the name on both sides. */
@@ -250,12 +267,13 @@ export const ME = {
   email: "vikaschowdary47@gmail.com",
   location: "Chicago, Illinois",
   site: "https://vikaschowdary.com",
+  github: "https://github.com/vikaschowdary47/",
+  linkedin: "https://www.linkedin.com/in/vikaschowdary",
   // sameAs is the strongest signal Google uses to tie this site to *you* as a person.
   // Every URL here must be a profile that links back to vikaschowdary.com.
-  // TODO: add your LinkedIn URL — it is usually the top result for a name search.
   sameAs: [
     "https://github.com/vikaschowdary47",
-    // "https://www.linkedin.com/in/<your-handle>",
+    "https://www.linkedin.com/in/vikaschowdary",
   ],
 };
 
