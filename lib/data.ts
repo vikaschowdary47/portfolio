@@ -35,7 +35,7 @@ const ALL_PROJECTS: Project[] = [
     problem:
       "Splitting household bills means somebody reads every bill, does the maths, and chases everyone for their share.",
     built:
-      "Forward the bill email. eqlTab reads the provider, the amount, the due date and the billing period, splits it to the cent, and shows each member exactly what they owe before it is late.",
+      "Forward a bill to the household's own address, or photograph it. eqlTab reads the provider, the amount, the due date and the billing period, splits it to the cent, and shows each member exactly what they owe before it is late.",
     steps: [
       {
         title: "Ingest",
@@ -43,7 +43,7 @@ const ALL_PROJECTS: Project[] = [
       },
       {
         title: "Parse",
-        body: "A parser pulls provider, total, due date and billing period out of the email body and any PDF attachment, then flags anything it could not read clearly rather than guessing.",
+        body: "A parser pulls provider, total, due date and billing period out of the email body and any PDF attachment. A photo of a paper bill goes through AI scanning instead. Anything it cannot read clearly is flagged rather than guessed.",
       },
       {
         title: "Split",
@@ -56,10 +56,10 @@ const ALL_PROJECTS: Project[] = [
     ],
     stack: [
       "Next.js",
-      "React",
       "React Native",
       "Supabase",
       "Gmail API",
+      "AI bill scanning",
       "PostgreSQL",
     ],
     role: "Sole engineer and designer — web, mobile, backend, schema",
@@ -75,13 +75,13 @@ const ALL_PROJECTS: Project[] = [
     slug: "eqlshare",
     show: true,
     name: "eqlShare",
-    status: "Waitlist open",
+    status: "Shipping",
     live: true,
     tagline: "Send from your phone. Grab it on your laptop.",
     problem:
       "Moving one file from an iPhone to a Windows laptop is still, somehow, a nuisance.",
     built:
-      "Send a file, a link or copied text from your phone and pick it up on your laptop. Files on a free account delete themselves after 24 hours.",
+      "Send a file, a link or copied text from one device and it appears on all the others — including a desktop widget you can drag straight into any app. Shipped as iOS and Android apps, a notarized Mac build, and a Windows MSIX package built by CI.",
     steps: [
       {
         title: "Send",
@@ -89,7 +89,7 @@ const ALL_PROJECTS: Project[] = [
       },
       {
         title: "Relay",
-        body: "The payload goes to Supabase storage behind a short-lived code, so the receiving device needs nothing installed to claim it.",
+        body: "The payload goes to object storage behind a short-lived code, so the receiving device needs nothing installed to claim it. Storage is abstracted so it can move from Supabase to Cloudflare R2 without touching the clients.",
       },
       {
         title: "Collect",
@@ -99,8 +99,12 @@ const ALL_PROJECTS: Project[] = [
         title: "Expire",
         body: "Free-account files delete themselves after 24 hours, so nothing accumulates quietly in the background.",
       },
+      {
+        title: "Ship",
+        body: "One GitHub Actions pipeline builds and packages every platform — the Windows MSIX and the notarized Mac app included. Guest shares work without an account and merge into your account when you sign up.",
+      },
     ],
-    stack: ["React Native", "Supabase", "Cross-platform", "TypeScript"],
+    stack: ["React Native", "Supabase", "Cloudflare R2", "GitHub Actions", "Resend"],
     role: "Sole engineer and designer",
     period: "2026 — present",
     url: "https://eqlshare.com",
@@ -108,7 +112,7 @@ const ALL_PROJECTS: Project[] = [
     video: "/eqlshare_scrub.mp4",
     poster: "/eqlshare.jpg",
     preview: "/prev-eqlshare.svg",
-    proof: "Waitlist open, apps in progress",
+    proof: "iOS & Android in testing on Google Play · Mac notarized",
   },
   {
     slug: "reunite",
@@ -183,6 +187,30 @@ const ALL_PROJECTS: Project[] = [
     host: "gainstalk.com",
     preview: "/prev-gainstalk.svg",
     proof: "MVP live, Instagram connect next",
+  },
+  {
+    slug: "eqlstats",
+    show: true,
+    name: "eqlStats",
+    status: "In development",
+    tagline: "One workspace for everything about a project.",
+    problem:
+      "The facts about a project scatter: which APIs it uses, who owns the domain, where it deploys, which console link actually opens the right dashboard.",
+    built:
+      "A single workspace holding all of it, with a shareable link and a per-section toggle so you decide exactly what someone else sees.",
+    steps: [
+      {
+        title: "Collect",
+        body: "APIs, domains and their registrars, deploy status and the exact console links for each service — in one place instead of five browser tabs.",
+      },
+      {
+        title: "Share",
+        body: "A link anyone can open, with each section switched on or off individually, so a client sees status without seeing credentials or vendors.",
+      },
+    ],
+    stack: ["Next.js", "TypeScript", "Supabase"],
+    role: "Sole engineer and designer",
+    period: "2026 — present",
   },
   {
     slug: "leash",
@@ -346,7 +374,7 @@ export const ME = {
   name: "Vikas Chowdary",
   legalName: "Vikas Chowdary Chimmili",
   title: "AI-focused full-stack engineer",
-  email: "vikaschowdary47@gmail.com",
+  email: "vikaschowdary.dev@gmail.com",
   location: "Chicago, Illinois",
   site: "https://vikaschowdary.com",
   github: "https://github.com/vikaschowdary47/",

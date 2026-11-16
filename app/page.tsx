@@ -20,10 +20,10 @@ export default function Home() {
             </h1>
             <p className="role">{ME.title}</p>
             <p className="lede">
-              I ship products end to end. <b>eqlTab</b> reads a forwarded bill
-              and splits it to the cent. <b>eqlShare</b> moves a file from your
-              phone to your laptop. <b>Leash</b> keeps an AI agent inside its
-              spending limits.
+              I ship products end to end — web, mobile and desktop.{" "}
+              <b>eqlTab</b> reads a forwarded bill and splits it to the cent.{" "}
+              <b>eqlShare</b> moves a file across every device you own.{" "}
+              <b>Reunite</b> lets a stranger reach you without your number.
             </p>
             <dl className="idfacts">
               <div>
@@ -35,6 +35,10 @@ export default function Home() {
               <div>
                 <dt className="lbl">Exp</dt>
                 <dd>4+ years · React / Node / Python</dd>
+              </div>
+              <div>
+                <dt className="lbl">Won</dt>
+                <dd>2 of 3 hackathons entered</dd>
               </div>
               <div>
                 <dt className="lbl">Degree</dt>
