@@ -1,27 +1,5 @@
-/* dark-first design: dark is the base, light is a full repaint (not an inversion) */
+/* light-first: white is the default for every visitor. Dark is opt-in via the toggle. */
 :root{
-  color-scheme:dark;
-  --bg:#0c0e11; --panel:#121519; --panel2:#171b20; --raise:#1c2127;
-  --ink:#e9ecef; --dim:#99a1a9; --faint:#7b848d;
-  --grid:rgba(255,255,255,.04); --line:#222932; --line2:#2d353e;
-  --sig:#d4483a; --sigdim:rgba(212,72,58,.14); --ok:#3f9d6d;
-  --barbg:rgba(12,14,17,.92);
-  --shadow:0 30px 70px -38px #000; --shadow2:0 34px 80px -46px #000;
-  --h:"Chivo",-apple-system,"Helvetica Neue",Arial,sans-serif;
-  --m:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-}
-@media (prefers-color-scheme: light){
-  :root:not([data-theme="dark"]){
-    color-scheme:light;
-    --bg:#f3f5f6; --panel:#ffffff; --panel2:#eef1f3; --raise:#e7ecef;
-    --ink:#14181c; --dim:#55606a; --faint:#646d76;
-    --grid:rgba(14,22,30,.055); --line:#dde3e8; --line2:#c3ccd3;
-    --sig:#be3a2b; --sigdim:rgba(190,58,43,.12); --ok:#1f7a4d;
-    --barbg:rgba(243,245,246,.9);
-    --shadow:0 24px 54px -34px rgba(16,24,32,.38); --shadow2:0 30px 64px -40px rgba(16,24,32,.42);
-  }
-}
-:root[data-theme="light"]{
   color-scheme:light;
   --bg:#f3f5f6; --panel:#ffffff; --panel2:#eef1f3; --raise:#e7ecef;
   --ink:#14181c; --dim:#55606a; --faint:#646d76;
@@ -29,6 +7,19 @@
   --sig:#be3a2b; --sigdim:rgba(190,58,43,.12); --ok:#1f7a4d;
   --barbg:rgba(243,245,246,.9);
   --shadow:0 24px 54px -34px rgba(16,24,32,.38); --shadow2:0 30px 64px -40px rgba(16,24,32,.42);
+  --h:"Chivo",-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --m:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+/* Dark only when the visitor asks for it. To follow the OS instead, change this
+   selector to: @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) } */
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0c0e11; --panel:#121519; --panel2:#171b20; --raise:#1c2127;
+  --ink:#e9ecef; --dim:#99a1a9; --faint:#7b848d;
+  --grid:rgba(255,255,255,.04); --line:#222932; --line2:#2d353e;
+  --sig:#d4483a; --sigdim:rgba(212,72,58,.14); --ok:#3f9d6d;
+  --barbg:rgba(12,14,17,.92);
+  --shadow:0 30px 70px -38px #000; --shadow2:0 34px 80px -46px #000;
 }
 *{box-sizing:border-box}
 html{overflow-x:clip;scroll-behavior:smooth}
@@ -224,3 +215,38 @@ footer a{color:inherit;text-decoration:none;transition:color .2s}
 footer a:hover,footer a:focus-visible{color:var(--sig)}
 .idfacts dd a{text-decoration:none}
 .idfacts dd a:hover em{color:var(--sig)}
+
+/* ---- studio page ---- */
+.studioHead{padding-block:52px 22px}
+.studioHead h1{font-size:clamp(2.6rem,7vw,4.6rem);line-height:.95}
+.studioHead .sub{font-size:clamp(1.1rem,2.3vw,1.5rem);color:var(--dim);margin:18px 0 0;max-width:30ch;font-weight:700;letter-spacing:-.02em}
+.stats{display:flex;flex-wrap:wrap;gap:0;margin-top:34px;border-top:1px solid var(--line)}
+.stats div{flex:1 1 150px;min-width:0;padding:14px 18px 14px 0;border-bottom:1px solid var(--line)}
+.stats b{display:block;font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:900;letter-spacing:-.03em;line-height:1}
+.stats span{font-family:var(--m);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);display:block;margin-top:7px}
+
+.work{display:grid;grid-template-columns:minmax(0,1fr);gap:26px;align-items:center;padding-block:40px;border-top:1px solid var(--line)}
+@media(min-width:900px){
+  .work{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;padding-block:56px}
+  .work:nth-child(even) .workShot{order:-1}
+}
+.workShot{border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:#121519;box-shadow:var(--shadow2);min-width:0}
+.workShot img{display:block;width:100%;height:auto}
+.workTxt h3{font-size:clamp(2rem,4.6vw,3rem);font-weight:900;letter-spacing:-.035em;display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.workTxt .line{font-size:clamp(1.05rem,2vw,1.3rem);font-weight:700;letter-spacing:-.02em;margin:14px 0 0;max-width:30ch}
+.workTxt p{color:var(--dim);margin:12px 0 0;font-size:15px;max-width:46ch}
+.proof{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--m);font-size:11.5px;color:var(--sig);background:var(--sigdim);border-radius:999px;padding:6px 13px}
+.proof::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sig);flex:none}
+.state.on{background:var(--sig);color:#fff;border-color:var(--sig)}
+.workLinks{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;align-items:center}
+.workLinks a{font-family:var(--m);font-size:12.5px;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+.workLinks .go{color:var(--sig)}
+.lab{display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--line);padding-top:12px;margin-top:40px}
+.lab h2{font-family:var(--m);font-size:13px;font-weight:500;letter-spacing:.17em;text-transform:uppercase;color:var(--dim)}
+.lab span{margin-left:auto;font-family:var(--m);font-size:11px;color:var(--faint)}
+.mini{display:grid;gap:12px;grid-template-columns:minmax(0,1fr);margin-top:20px}
+@media(min-width:760px){.mini{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mini a{display:block;text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:18px;background:var(--panel);transition:border-color .2s}
+.mini a:hover{border-color:var(--sig)}
+.mini b{font-size:1.1rem;font-weight:800;letter-spacing:-.02em}
+.mini p{margin:7px 0 0;color:var(--dim);font-size:13.5px}

@@ -18,6 +18,10 @@ export type Project = {
   host?: string;
   video?: string;
   poster?: string;
+  /** Diagram shown on the studio page. */
+  preview?: string;
+  /** One short, true line of evidence. */
+  proof?: string;
 };
 
 const ALL_PROJECTS: Project[] = [
@@ -64,6 +68,8 @@ const ALL_PROJECTS: Project[] = [
     host: "eqltab.com",
     video: "/eqltab_scrub.mp4",
     poster: "/eqltab.jpg",
+    preview: "/prev-eqltab.svg",
+    proof: "Closed beta with real households",
   },
   {
     slug: "eqlshare",
@@ -101,6 +107,8 @@ const ALL_PROJECTS: Project[] = [
     host: "eqlshare.com",
     video: "/eqlshare_scrub.mp4",
     poster: "/eqlshare.jpg",
+    preview: "/prev-eqlshare.svg",
+    proof: "Waitlist open, apps in progress",
   },
   {
     slug: "reunite",
@@ -136,6 +144,8 @@ const ALL_PROJECTS: Project[] = [
     period: "2026 — present",
     url: "https://getreunite.com",
     host: "getreunite.com",
+    preview: "/prev-reunite.svg",
+    proof: "Shipping — $10 a tag, sold locally",
   },
   {
     slug: "gainstalk",
@@ -171,6 +181,8 @@ const ALL_PROJECTS: Project[] = [
     period: "2026 — present",
     url: "https://gainstalk.com",
     host: "gainstalk.com",
+    preview: "/prev-gainstalk.svg",
+    proof: "MVP live, Instagram connect next",
   },
   {
     slug: "leash",

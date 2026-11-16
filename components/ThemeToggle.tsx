@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-/** Explicit light/dark choice, remembered per browser. Defaults to the OS setting. */
+/** Light is the default for everyone; dark is opt-in and remembered per browser. */
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark" | null>(null);
 
@@ -12,7 +12,7 @@ export default function ThemeToggle() {
       setTheme(saved);
       document.documentElement.setAttribute("data-theme", saved);
     } else {
-      setTheme(window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      setTheme("light");
     }
   }, []);
 
