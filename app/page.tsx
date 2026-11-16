@@ -58,7 +58,9 @@ export default function Home() {
         <section id="projects">
           <div className="shead">
             <h2>Projects</h2>
-            <span className="n">{PROJECTS.length} shipped / in progress</span>
+            <Link className="n" href="/projects" style={{ textDecoration: "none", color: "var(--sig)" }}>
+              All {PROJECTS.length} projects →
+            </Link>
           </div>
           <div className="plist">
             {PROJECTS.map((p) => (

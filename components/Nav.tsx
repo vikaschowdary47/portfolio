@@ -8,7 +8,7 @@ export default function Nav() {
       <div className="wrap">
         <Link href="/" style={{ textDecoration: "none" }}><b>{ME.name.toUpperCase()}</b></Link>
         <span className="sep hide-sm">/</span>
-        <Link href="/#projects" className="hide-sm">Projects</Link>
+        <Link href="/projects" className="hide-sm">Projects</Link>
         <span className="sep hide-sm">/</span>
         <Link href="/#experience" className="hide-sm">Experience</Link>
         <span className="sep hide-sm">/</span>

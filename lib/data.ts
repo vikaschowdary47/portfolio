@@ -103,6 +103,76 @@ const ALL_PROJECTS: Project[] = [
     poster: "/eqlshare.jpg",
   },
   {
+    slug: "reunite",
+    show: true,
+    name: "Reunite",
+    status: "Shipping",
+    live: true,
+    tagline: "Let strangers reach you. Not your number.",
+    problem:
+      "To be reachable when someone finds your car, your bag or your keys, you normally have to put a phone number on them — and then anyone can call it.",
+    built:
+      "A QR tag the finder scans in their browser, with no app and no account. The message goes through an AI layer that blocks threats and spam, flags the urgent ones and translates anything that is not in English. Your number and email are never shown.",
+    steps: [
+      {
+        title: "Tag",
+        body: "A printed QR tag goes on the windshield, the bag, the laptop or the keys. Car stickers ship today; luggage, laptop, keychain and pet collar tags are next.",
+      },
+      {
+        title: "Scan",
+        body: "The finder scans with the phone camera and types a message straight in the browser. No app to install and no account to create — friction here means the message never gets sent.",
+      },
+      {
+        title: "Screen",
+        body: "Every message is read by an AI layer first. It blocks abuse and spam, marks the genuinely urgent ones, and translates messages that arrive in another language.",
+      },
+      {
+        title: "Reach",
+        body: "The owner gets the message with the contact details still hidden. Location is attached only when the finder chooses to share it.",
+      },
+    ],
+    stack: ["Next.js", "Vercel", "AI screening", "QR codes"],
+    role: "Sole engineer, designer and operator — app, tags and fulfilment",
+    period: "2026 — present",
+    url: "https://getreunite.com",
+    host: "getreunite.com",
+  },
+  {
+    slug: "gainstalk",
+    show: true,
+    name: "GainsTalk",
+    status: "MVP live",
+    live: true,
+    tagline: "Every client message from every app in one place.",
+    problem:
+      "An online coach's clients message from Instagram, WhatsApp, email and SMS. The coaching is the easy part; keeping up with the inbox is what actually eats the day.",
+    built:
+      "A single dashboard that collects client messages from every app, groups them by client, and drafts the reply. The draft is a starting point, not an outbox — nothing sends until the coach approves it.",
+    steps: [
+      {
+        title: "Collect",
+        body: "Client messages land in one inbox instead of four apps. Instagram connects first, with WhatsApp to follow.",
+      },
+      {
+        title: "Sort",
+        body: "Messages are grouped per client and carry their history, so a reply is written with the full context rather than from a single line.",
+      },
+      {
+        title: "Draft",
+        body: "The AI writes a reply in the coach's own voice, using what it knows about that client.",
+      },
+      {
+        title: "Approve",
+        body: "The coach edits or accepts. Nothing is ever sent automatically — the replies stay the coach's own words.",
+      },
+    ],
+    stack: ["Next.js", "React", "AI drafting"],
+    role: "Sole engineer and designer",
+    period: "2026 — present",
+    url: "https://gainstalk.com",
+    host: "gainstalk.com",
+  },
+  {
     slug: "leash",
     show: true,
     name: "Leash",
