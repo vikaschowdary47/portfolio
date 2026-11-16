@@ -250,3 +250,12 @@ footer a:hover,footer a:focus-visible{color:var(--sig)}
 .mini a:hover{border-color:var(--sig)}
 .mini b{font-size:1.1rem;font-weight:800;letter-spacing:-.02em}
 .mini p{margin:7px 0 0;color:var(--dim);font-size:13.5px}
+
+/* ---- home: compact product strip ---- */
+.strip{display:grid;grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
+.stripItem{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding-block:15px;border-bottom:1px solid var(--line);text-decoration:none;transition:padding-left .2s}
+@media(min-width:720px){.stripItem{grid-template-columns:150px 120px minmax(0,1fr);gap:20px;align-items:baseline}}
+.stripItem:hover{padding-left:8px}
+.stripItem b{font-size:1.15rem;font-weight:800;letter-spacing:-.025em}
+.stripItem .st{font-family:var(--m);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--sig);border:1px solid var(--sig);border-radius:999px;padding:3px 9px;justify-self:start}
+.stripItem em{font-style:normal;color:var(--dim);font-size:14.5px;min-width:0}

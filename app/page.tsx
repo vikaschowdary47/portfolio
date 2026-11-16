@@ -59,27 +59,15 @@ export default function Home() {
           <div className="shead">
             <h2>Projects</h2>
             <Link className="n" href="/projects" style={{ textDecoration: "none", color: "var(--sig)" }}>
-              All {PROJECTS.length} projects →
+              See the studio →
             </Link>
           </div>
-          <div className="plist">
-            {PROJECTS.map((p) => (
-              <Link className="pcard" key={p.slug} href={`/projects/${p.slug}`}>
-                <h3>
-                  {p.name}{" "}
-                  <span className={`state${p.live ? "" : " q"}`}>
-                    {p.status}
-                  </span>
-                </h3>
-                <p>
-                  {p.tagline} {p.problem}
-                </p>
-                <div className="kv">
-                  {p.stack.slice(0, 5).map((s) => (
-                    <span key={s}>{s}</span>
-                  ))}
-                </div>
-                <span className="more">Read the case study →</span>
+          <div className="strip">
+            {PROJECTS.filter((p) => p.live).map((p) => (
+              <Link className="stripItem" key={p.slug} href={`/projects/${p.slug}`}>
+                <b>{p.name}</b>
+                <span className="st">{p.status}</span>
+                <em>{p.tagline}</em>
               </Link>
             ))}
           </div>
